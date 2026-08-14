@@ -1,4 +1,4 @@
-// Enrouleur vêtements automatique V2 - Projet CSC 2027
+/ Enrouleur vêtements automatique V2 - Projet CSC 2027
 #include <Servo.h>
 
 Servo monServo;
