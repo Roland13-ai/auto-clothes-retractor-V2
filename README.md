@@ -43,8 +43,8 @@ An automatic system that retracts the laundry line as soon as rain is detected.
 1. Clone the repo
    ```bash
    git clone https://github.com/Roland13-ai/auto-clothes-retractor-v2.git
-Flash the code — open auto_clothes.ino in Arduino IDE and upload
-Wire it up — connect the YL-69 sensor to A0 and the SG90 servo to pin 9
+2. Flash the code — open auto_clothes.ino in Arduino IDE and upload
+3. Wire it up — connect the YL-69 sensor to A0 and the SG90 servo to pin 9
 Status
 [x] Core logic written and functional
 [ ] Wiring diagram (schema_montage.jpg) to be added after physical assembly
