@@ -1,26 +1,45 @@
-# Auto-Clothes-Retractor V2
-*CSC 2027 Project - Rain Detection + Servo Motor*
+# Auto Clothes Retractor V2
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-### 🎯 Description
-Automatic system that retracts the laundry as soon as rain is detected.
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-Uses YL-69 sensor + SG90 servo + Arduino Uno.
+## Overview
+An automatic system that retracts the laundry line as soon as rain is detected.
 
-### 🔧 Materials Used
-- Arduino Uno R3
-- YL-69 Rain Sensor + Module
-- SG90 180° Servo Motor
-- Dupont Wire + 5V Power Supply
+## About
+- **Problem it solves:** Laundry left outside gets soaked if it rains while no one is around to bring it in.
+- **Why I built it:** Combine a rain sensor with a servo motor to automate a simple, everyday household task.
 
-### ⚡ Operation
-1. Sensor measures humidity on pin A0
-2. If value < 400 → Rain detected
-3. Servo rotates 180° to wind the wire
-4. Dry weather → Servo returns to 0°
+## Key Features
+- 🌧️ YL-69 rain sensor continuously monitors moisture on pin A0
+- ⚙️ SG90 servo motor winds the line in when rain is detected (< 400 threshold) and returns it to the "out" position in dry weather
+- 🔁 Fully automatic — no manual intervention needed
 
-### 📁 Files
-- auto_clothes.ino: Complete Arduino code
-- schema_montage.jpg: To be added after assembly
+## Hardware / Bill of Materials
+| No | Component | Qty | Role |
+|----|-----------|-----|------|
+| 01 | Arduino Uno R3 | 1 | Brain |
+| 02 | YL-69 rain sensor + module | 1 | Rain detection |
+| 03 | SG90 180° servo motor | 1 | Retracts/extends the line |
+| 04 | Dupont wires + 5V power supply | — | Wiring & power |
 
-### 👨‍💻 Author
-Roland Ulrich Sèdjro SOHO
+## Tech Stack
+`Arduino` `C++`
+
+## Code
+→ [View source code](auto_clothes.ino)
+
+## Files
+- `auto_clothes.ino`: complete Arduino code
+- `schema_montage.jpg`: wiring diagram (to be added after assembly)
+
+## Operation
+1. Sensor measures moisture on pin A0
+2. If value < 400 → rain detected
+3. Servo rotates to 180° to wind the line in
+4. Dry weather → servo returns to 0°
+
+## Installation
+1. Clone the repo
+   ```bash
+   git clone https://github.com/Roland13-ai/auto-clothes-retractor-v2.git
