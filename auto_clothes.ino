@@ -1,29 +1,29 @@
-/ Enrouleur vêtements automatique V2 - Projet CSC 2027
+// Automatic clothes retractor V2
 #include <Servo.h>
 
-Servo monServo;
-int capteurPluie = A0;  // YL-69 sur A0
-int pinServo = 9;       // Servo sur pin 9
-int seuilPluie = 400;   // < 400 = pluie
+Servo myServo;
+int rainSensor = A0;   // YL-69 on A0
+int servoPin = 9;      // Servo on pin 9
+int rainThreshold = 400; // < 400 = rain detected
 
 void setup() {
   Serial.begin(9600);
-  monServo.attach(pinServo);
-  monServo.write(0);  // Linge dehors au départ
-  Serial.println("Systeme demarre");
+  myServo.attach(servoPin);
+  myServo.write(0);  // Clothes out (default)
+  Serial.println("System started");
 }
 
 void loop() {
-  int valeurPluie = analogRead(capteurPluie);
-  Serial.println(valeurPluie);
+  int rainValue = analogRead(rainSensor);
+  Serial.println(rainValue);
 
-  if (valeurPluie < seuilPluie) {
-    monServo.write(180);  // Rentre le linge
-    Serial.println("PLUIE - Rangement");
+  if (rainValue < rainThreshold) {
+    myServo.write(180);  // Retract the line
+    Serial.println("RAIN - Retracting");
     delay(2000);
   } else {
-    monServo.write(0);    // Laisse dehors
-    Serial.println("Sec - Linge dehors");
+    myServo.write(0);    // Leave clothes out
+    Serial.println("Dry - Clothes out");
   }
   delay(1000);
 }
